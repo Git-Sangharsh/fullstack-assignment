@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     background-color: #C6BEE1;
+    z-index: 999;
 }
 
 .navbar-wrapper{
@@ -35,6 +36,7 @@
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
+    cursor: pointer;
 }
 .navbar-wrapper-logo{
     display: flex;

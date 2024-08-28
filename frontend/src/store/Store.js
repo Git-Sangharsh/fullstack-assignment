@@ -3,6 +3,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cards: [],
   searchQuery: "",
+  showAddCardBox: false,
 };
 
 const cardSlice = createSlice({
@@ -15,10 +16,13 @@ const cardSlice = createSlice({
     setSearchQuery: (state, action) => {
       state.searchQuery = action.payload;
     },
+    setShowAddCardBox: (state, action) => {
+      state.showAddCardBox = action.payload;
+    }
   },
 });
 
-export const { setAddCard, setSearchQuery } = cardSlice.actions;
+export const { setAddCard, setSearchQuery, setShowAddCardBox } = cardSlice.actions;
 
 const store = configureStore({
   reducer: cardSlice.reducer,
