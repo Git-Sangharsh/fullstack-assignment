@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import {useSelector} from "react-redux";
 
 function App() {
+
+  const query = useSelector((state) => state.searchQuery)
+
+  console.log(query)
   return (
     <div className="App">
       <header className="App-header">
