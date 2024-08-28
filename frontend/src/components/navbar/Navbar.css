@@ -1,0 +1,48 @@
+.navbar-container{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C6BEE1;
+}
+
+.navbar-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    background-color: rgb(20, 20, 20);
+    padding: 20px;
+    margin-top: 10px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-sizing: border-box;
+
+}
+
+.navbar-submit-btn{
+    background-color: rgb(32, 32, 32);
+    padding: 8px 26px;
+    border-radius: 9px;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+.navbar-wrapper-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: white;
+}
+.logo{
+    width: 20px;
+}
