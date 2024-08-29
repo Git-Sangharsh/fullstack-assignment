@@ -55,3 +55,18 @@
     color: red;
     transition: 0.4s ease-in;
 }
+.addcard-header-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.close-logo{
+    width: 20px;
+    cursor: pointer;
+}
+
+.addcard-header-box-h1{
+    font-size: 22px;
+}

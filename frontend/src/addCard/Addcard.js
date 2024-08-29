@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { setShowAddCardBox, addNewCard } from "../store/Store";
+import closeSvg from "../assets/close.svg";
 
 const Addcard = () => {
   const dispatch = useDispatch();
@@ -67,6 +68,9 @@ const Addcard = () => {
     };
   }, [showAddCard]);
 
+  const handleCloseAddCardBox = () => {
+    dispatch(setShowAddCardBox(false));
+  }
   return (
     <>
       <AnimatePresence>
@@ -79,7 +83,11 @@ const Addcard = () => {
             className="addcard-container"
           >
             <div className="addcard-wrapper">
-              <h1>Add Card</h1>
+              <div className="addcard-header-box">
+                <h1 className="addcard-header-box-h1">Create Card</h1>
+                <img onClick={handleCloseAddCardBox}  src={closeSvg} alt="" className="close-logo"/>
+              </div>
+
               <div className="addcard-wrapper-box">
                 <h6 className="addcard-wrapper-box-header">Add Card Id</h6>
                 <input
