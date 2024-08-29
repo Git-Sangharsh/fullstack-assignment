@@ -27,7 +27,7 @@ const Addcard = () => {
   };
 
   const handleSubmitBtn = () => {
-    console.log(id, title, description);
+    // console.log(id, title, description);
 
     const sendObject = {
       id: id,
@@ -37,26 +37,27 @@ const Addcard = () => {
 
     axios
       .post("http://localhost:5000/cards", sendObject)
-      .then((res) => {console.log(res.data)
-        if(res.data.status === false) {
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.status === false) {
           setNotValid(true);
+        } else {
+          dispatch(setShowAddCardBox(false));
         }
       })
       .catch((err) => console.log(err));
-    dispatch(setShowAddCardBox(false));
   };
 
-
   useEffect(() => {
-    if(notValid){
+    if (notValid) {
       const timer = setTimeout(() => {
         setNotValid(false);
-      },3000);
-      return () => clearTimeout(timer)
+      }, 3000);
+      return () => clearTimeout(timer);
     }
-  }, [notValid])
+  }, [notValid]);
 
-  console.log("not valid is ",notValid);
+  // console.log("not valid is ", notValid);
 
   return (
     <>
@@ -103,6 +104,19 @@ const Addcard = () => {
               <button className="submit-btn" onClick={handleSubmitBtn}>
                 Submit Card
               </button>
+              <AnimatePresence>
+                {notValid && (
+                  <motion.h6
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.4, ease: "easeIn" }}
+                    exit={{ opacity: 0 }}
+                    className="not_valid_header"
+                  >
+                    All Fiels Required Or Card Id Already in use!!!
+                  </motion.h6>
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
         )}

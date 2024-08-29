@@ -50,3 +50,8 @@
     font-style: normal;
     border: none;
 }
+
+.not_valid_header{
+    color: red;
+    transition: 0.4s ease-in;
+}
