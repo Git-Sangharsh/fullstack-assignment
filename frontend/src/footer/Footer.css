@@ -1,19 +1,18 @@
 .footer-container{
-    height: 300px;
     width: 100%;
     background-color: #141414;
-    margin: 30px 0px;
+    margin-top: 30px;
 }
 .footer-wrapper{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     place-items: center;
     width: 100%;
+    height: 300px;
     color: white;
     padding: 20px;
     box-sizing: border-box;
     gap: 10px;
-    height: 100%;
 }
 
 .footer-wrapper-box{
@@ -49,4 +48,40 @@
 .footer-end-logo{
     width: 15px;
     margin-bottom: 5px;
+}
+
+@media (max-width: 768px){
+    .footer-wrapper{
+        height: 250px;
+    }
+
+    .footer-wrapper-box-header{
+        font-size: 18px;
+    }
+
+    .footer-wrapper-box-li{
+        font-size: 10px;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 550px){
+
+
+    .footer-wrapper{
+        gap: 5px;
+        padding: 10px;
+        height: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .footer-wrapper-box-header{
+        font-size: 14px;
+    }
+
+    .footer-wrapper-box-li{
+        font-size: 6px;
+        width: 100%;
+    }
+
 }

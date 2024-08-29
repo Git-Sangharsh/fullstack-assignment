@@ -3,11 +3,10 @@ import "./Addcard.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
-import { setShowAddCardBox } from "../store/Store";
+import { setShowAddCardBox, addNewCard } from "../store/Store";
 
 const Addcard = () => {
   const dispatch = useDispatch();
-
   const showAddCard = useSelector((state) => state.showAddCardBox);
   const [id, setId] = useState("");
   const [title, setTitle] = useState("");
@@ -27,8 +26,6 @@ const Addcard = () => {
   };
 
   const handleSubmitBtn = () => {
-    // console.log(id, title, description);
-
     const sendObject = {
       id: id,
       title: title,
@@ -42,7 +39,8 @@ const Addcard = () => {
         if (res.data.status === false) {
           setNotValid(true);
         } else {
-          dispatch(setShowAddCardBox(false));
+          dispatch(addNewCard(sendObject)); // Add new card to Redux store
+          dispatch(setShowAddCardBox(false)); // Close the add card box
         }
       })
       .catch((err) => console.log(err));
@@ -57,7 +55,17 @@ const Addcard = () => {
     }
   }, [notValid]);
 
-  // console.log("not valid is ", notValid);
+  useEffect(() => {
+    if (showAddCard) {
+      document.body.classList.add("hide-scrollbar");
+    } else {
+      document.body.classList.remove("hide-scrollbar");
+    }
+
+    return () => {
+      document.body.classList.remove("hide-scrollbar");
+    };
+  }, [showAddCard]);
 
   return (
     <>
@@ -113,7 +121,7 @@ const Addcard = () => {
                     exit={{ opacity: 0 }}
                     className="not_valid_header"
                   >
-                    All Fiels Required Or Card Id Already in use!!!
+                    All Fields Required Or Card Id Already in use!!!
                   </motion.h6>
                 )}
               </AnimatePresence>

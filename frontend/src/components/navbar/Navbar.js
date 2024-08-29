@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="navbar-wrapper">
         <div className="navbar-wrapper-logo">
           <img src={logoSvg} alt="" className="logo" />
-          <h4>Abstract | Help Center</h4>
+          <h4 className="navbar-wrapper-header">Abstract | Help Center</h4>
         </div>
         <button className="navbar-submit-btn" onClick={handleAddCardBtn}>
           Submit a Request

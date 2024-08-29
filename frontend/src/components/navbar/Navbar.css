@@ -8,7 +8,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #C6BEE1;
     z-index: 999;
 }
 
@@ -47,4 +46,43 @@
 }
 .logo{
     width: 20px;
+}
+
+@media(max-width: 500px){
+    .navbar-wrapper-header{
+        font-size: 12px;
+    }
+    .logo{
+        width: 15px;
+    }
+
+
+    .navbar-submit-btn{
+        padding: 8px 15px;
+        border-radius: 9px;
+        font-size: 10px;
+    }
+
+    .cards-search-box-header{
+        font-size: 30px !important;
+    }
+
+}
+
+
+
+@media(max-width:350px){
+    .navbar-wrapper-header{
+        font-size: 10px;
+    }
+    .logo{
+        width: 10px;
+    }
+
+
+    .navbar-submit-btn{
+        padding: 8px 10px;
+        border-radius: 9px;
+        font-size: 8px;
+    }
 }

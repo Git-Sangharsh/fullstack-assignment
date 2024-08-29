@@ -27,7 +27,9 @@ app.get("/", (req, res) => {
 
 app.post("/cards", async (req, res) => {
   const { id, title, description } = req.body;
-  if (!id || !title || !description) {
+
+  const findOneById = await Card.findOne({id})
+  if (!id || !title || !description || findOneById) {
     return res.status(200).json({ message: "All Fileds Are Required!!!", status: false });
   }
 

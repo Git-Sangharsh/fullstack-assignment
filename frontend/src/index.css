@@ -18,7 +18,6 @@ html,
 body,
 #root {
   box-sizing: border-box;
-  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -30,7 +29,6 @@ body,
   margin: 0;
   padding: 0;
 }
-
 
 .hide-scrollbar {
   overflow: hidden;

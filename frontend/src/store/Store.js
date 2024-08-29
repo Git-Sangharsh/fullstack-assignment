@@ -18,11 +18,14 @@ const cardSlice = createSlice({
     },
     setShowAddCardBox: (state, action) => {
       state.showAddCardBox = action.payload;
-    }
+    },
+    addNewCard: (state, action) => {
+      state.cards.push(action.payload);
+    },
   },
 });
 
-export const { setAddCard, setSearchQuery, setShowAddCardBox } = cardSlice.actions;
+export const { setAddCard, setSearchQuery, setShowAddCardBox, addNewCard } = cardSlice.actions;
 
 const store = configureStore({
   reducer: cardSlice.reducer,

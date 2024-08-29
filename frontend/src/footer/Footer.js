@@ -10,7 +10,6 @@ const Footer = () => {
           <h5 className="footer-wrapper-box-header">Abstract</h5>
           <li className="footer-wrapper-box-li">Branches</li>
         </div>
-
         <div className="footer-wrapper-box">
           <h5 className="footer-wrapper-box-header">Resources</h5>
           <li className="footer-wrapper-box-li">Blog</li>
@@ -31,10 +30,8 @@ const Footer = () => {
           <li className="footer-wrapper-box-li">About Us</li>
           <li className="footer-wrapper-box-li">Careers</li>
           <li className="footer-wrapper-box-li">Legal</li>
-          <div className="footer-wrapper-box">
           <li className="footer-wrapper-box-li contact-us">Contact Us</li>
           <li className="footer-wrapper-box-li">info@abstract.com</li>
-          </div>
         </div>
         <div className="footer-wrapper-box footer-end">
           <img src={logoSvg} alt="" className="footer-end-logo" />
