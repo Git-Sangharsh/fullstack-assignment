@@ -28,12 +28,13 @@ app.get("/", (req, res) => {
 app.post("/cards", async (req, res) => {
   const { id, title, description } = req.body;
   if (!id || !title || !description) {
-    return res.status(400).json({ message: "All Fileds Are Required!!!" });
+    return res.status(200).json({ message: "All Fileds Are Required!!!", status: false });
   }
+
   try {
     const newCard = new Card({ id, title, description });
     await newCard.save();
-    return res.status(200).json({ message: "Card Added Successfully!" });
+    return res.status(200).json({ message: "Card Added Successfully!", data: newCard });
   } catch (err) {
     console.log(err + "err in post endpoint!!!");
     res.status(500).json({ message: "Server error, could not create card" });
